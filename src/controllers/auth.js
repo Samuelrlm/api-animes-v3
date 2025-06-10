@@ -35,6 +35,12 @@ async function login(req, res){
 
         return res.status(200).send({token})
     } catch (error) {
-        
+        return res.status(500).send({
+            error: error.message
+        })
     }
+}
+
+module.exports = {
+    login
 }
